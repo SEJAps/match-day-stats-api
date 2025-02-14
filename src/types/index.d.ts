@@ -1,0 +1,1 @@
+export type TPORT_MYSQL = number | undefined;

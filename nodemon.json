@@ -1,0 +1,16 @@
+{
+    "watch": [
+        "src",
+        "test",
+        "public"
+    ],
+    "ext": "ts, js, json, yaml, css, html",
+    "ignore": [
+        "node_modules",
+        "dist",
+        "build",
+        ".vscode",
+        "src/**/*.spec.ts"
+    ],
+    "exec": "ts-node -r tsconfig-paths/register src/index.ts"
+}
