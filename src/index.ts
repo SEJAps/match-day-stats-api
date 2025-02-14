@@ -10,6 +10,8 @@ const app = express();
 
 app.set("PORT", PORT);
 
+
+
 app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json());
@@ -33,16 +35,16 @@ app.get("/", (_req: Request, res: Response) => {
 
 // Middleware de manejo de errores
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    console.error(err.stack); // Imprime el error en consola para depuración
-    res.status(500).json({
-        message: 'Something went wrong!',
-        error: err.message, // En un entorno de producción, evita enviar mensajes detallados
-    });
+	console.error(err.stack); // Imprime el error en consola para depuración
+	res.status(500).json({
+		message: 'Something went wrong!',
+		error: err.message, // En un entorno de producción, evita enviar mensajes detallados
+	});
 });
 
 // Listen server
 app.listen(app.get("PORT"), () => {
-    console.log(`http://localhost:${app.get("PORT")} is running!`);
+	console.log(`http://localhost:${app.get("PORT")} is running!`);
 })
 
 
